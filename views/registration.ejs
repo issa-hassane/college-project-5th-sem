@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body style="background-image: url('images/bg2.jpg'); background-size: cover;">
+    <%- include('./partials/nav.ejs') %> 
+    <br> <br>
+    <div id="registration">
+        <br><br> <br>
+        
+        <!-- <h3 class="text-center text-white pt-5">Registration form</h3> -->
+        <div class="container">
+            <% if (msg!='') { %>
+
+                <div class="alert alert-success" role="alert">
+                    <p><%= msg %> </p>
+                  </div>
+             
+            <% } %>
+            <div id="registration-row" class="row justify-content-center align-items-center">
+                <div id="registration-column" class="col-md-6">
+                    <div id="registration-box" class="col-md-12">
+                        <form id="member-registration" action="/registration" method="post" class="form-validate form-horizontal well">
+                            <fieldset>
+                                <legend style="color: black;">User Registration</legend>
+                                <!-- <div class="form-group">
+                                    <label for="exampleInputPassword1">Name *</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1">
+                                </div> -->
+                                <div class="form-group">
+                                    <label style="color: black;" for="exampleInputPassword1">Username *</label>
+                                    <input type="text" class="form-control" name="username" id="exampleInputPassword1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: black;" for="exampleInputPassword1">Phone no *</label>
+                                    <input type="tel" class="form-control" name="phoneno" id="exampleInputPassword1" maxlength="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: black;" for="exampleInputPassword1">Password *</label>
+                                    <input type="password" class="form-control" name="password1" id="exampleInputPassword1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: black;" for="exampleInputPassword1">Confirm Password *</label>
+                                    <input type="password" class="form-control" name="password2" id="exampleInputPassword1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: black;" for="exampleInputEmail1">Email Address *</label>
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" required>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-group d-flex justify-content-start">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    <div class="form-check form-group d-flex justify-content-end">
+                                        <a class="btn btn-info" href="/login">Sign in instead</a>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <br> <br>   <br> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    	<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/jquery.timepicker.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="js/google-map.js"></script>
+        <script src="js/main.js"></script>
+        
+</body>
+</html>

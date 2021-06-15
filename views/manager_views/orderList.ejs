@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/manager_partials/nav.ejs') %>
+    <!-- END nav -->
+    <br><br><br><br><br>
+    <div class="container">
+        
+        <br>
+        <% if( orders.length == 0 ){ %>
+          <h3 class="text-center">No orders for now</h3>
+          
+        <% }else{ %>
+          <h2 class="text-center">Order List</h2>
+           
+          <% orders.forEach((order,index)=>{ %>
+            <!-- <hr style="background-color: black; height: 4px;" > -->
+            <br>
+            <div class="shadow-lg p-3 mb-4">
+            <p >Order ID: <%= order._id %> </p> 
+            <p class="float-right" >Customer Name: <%= order.userName %> </p> 
+            <div class="mb-3">
+              <a href="/manager/confirmation/<%= order._id %>?action=confirm" class="btn btn-success">Confirm</a>
+              <a href="/manager/confirmation/<%= order._id %>?action=reject" class="btn btn-danger">Reject</a>
+            </div>
+            <%  for(let i = 0; i<order.products.length; i++){ %>
+              
+              <div class="card bg-light mb-3">
+                <div class="card-header"> </div>
+                <div class="card-body">
+                  <img class="img-fluid smallimg float-left mr-3" src="/uploads/images/<%= order.products[i].img %>" alt="food image">
+                  <div class="float-left">
+                    <h5 class="card-title"><%= order.products[i].name %></h5>
+                    <p class="card-text">details: <%= order.products[i].details %> </p>
+                    <p class="card-text">qty: <%= order.products[i].quantity %> </p>
+                    <p class="card-text">Price: <%= order.products[i].price %> ₹</p>
+                  </div>
+                  
+                </div>
+              </div>
+           <% } %>
+        </div>
+          
+
+         <% }) %> 
+
+        <% } %> <!-- else closing -->
+
+        
+
+    </div>
+    
+</body>
+</html>

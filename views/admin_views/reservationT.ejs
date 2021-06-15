@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/admin_partials/side_nav_bar.ejs') %>
+
+      <!-- END nav -->
+      <br><br><br><br><br>
+      <div class="container float-right">
+        <br>
+        <% if( reservation.length==0 ){ %>
+          <h3 class="text-center">No reservation for now</h3>
+ 
+          <% }else{ %>
+            <h2 class="text-center">Table Reservation request</h2>
+            <br>
+          
+
+              <% reservation.forEach(reser=> { %>
+                <a href="/admin/deleteReser/<%= reser._id %>" class="btn btn-danger">Done</a>
+
+                  <div class="card">
+                    <h5 class="card-header">ID: <%= reser._id %>
+                    </h5>
+                    <div class="card-body">
+                      <h5 class="card-title">Customer: <%= reser.name %>
+                      </h5>
+                      <p class="card-text">Phoneno: <%= reser.phoneno %>
+                      </p>
+                      <p class="card-text">Time: <%= reser.time %>
+                      </p>
+                      <p class="card-text">Email: <%= reser.email %>
+                      </p>
+                      <p class="card-text">Date: <%= reser.date.toLocaleDateString("en-GB"); %>
+                      </p>
+                    
+
+                    </div>
+                </div>
+                <br>
+
+                  <% }); %>
+
+                    <% } %>
+                      <!-- else closing -->
+
+  </body>
+
+</html>

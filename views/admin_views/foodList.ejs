@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <style>
+
+        </style>
+
+        <!-- side/nav/bar -->
+        <%- include('./partials/admin_partials/side_nav_bar.ejs') %>
+
+            <!-- side/nav/bar -->
+            <br><br>
+
+            <div class="container float-right">
+
+                <br><br>
+
+                <div class="container float-right">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% food.forEach(food=>{ %>
+                                <tr>
+                                    <td><img class="img-fluid smallimg"
+                                            src="/uploads/images/<%= food.img %>"
+                                            alt="food image"></td>
+                                    <th scope="row"><%= food.name %></th>
+                                    <td><%= food.details %></td>
+                                    <td><%= food.price %> ₹</td>
+                                    <td>
+                                        <a class="btn btn-outline-primary" href="/admin/editFood/<%= food._id %>">Edit</a>
+                                        <a class="btn btn-danger" href="/admin/deleteFood/<%= food._id %>">Delete</a>
+                                        <!-- <button type="button" class="btn btn-outline-primary">Edit</button> -->
+                                        <!-- <button type="button" class="btn btn-danger">Delete</button> -->
+                                    </td>
+                                </tr>
+
+                            <% }) %> 
+
+                           
+                            <!-- <tr>
+                                <td><img class="img-fluid smallimg"
+                                        src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1126,w_2000,x_0,y_181/f_auto,q_auto,w_1100/v1554932288/shape/mentalfloss/12531-istock-637790866.jpg"
+                                        alt="..."></td>
+                                <th scope="row">Kabab</th>
+                                <td>Thornton</td>
+                                <td>80</td>
+                                <td><button type="button" class="btn btn-outline-primary">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img class="img-fluid smallimg"
+                                        src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1126,w_2000,x_0,y_181/f_auto,q_auto,w_1100/v1554932288/shape/mentalfloss/12531-istock-637790866.jpg"
+                                        alt="..."></td>
+                                <th scope="row">Gobi</th>
+                                <td>the Bird</td>
+                                <td>70</td>
+                                <td><a href="#" class="btn btn-outline-primary">Edit</a>
+                                    <a href="#" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+
+
+            <!-- end navbar -->
+
+            <!-- <div style="height: 300vh; background-color: aqua;">
+        
+        <br><br><br><br>
+        <div class="container-fluid" style="background: blueviolet;">
+            <h3>sfsfsfsdfsdfsdfsdfs</h3>
+
+        </div>
+
+        <br><br><br><br>
+        <h1 class="float-right" style="color: blue;">hello</h1>
+
+    </div> -->
+
+
+            <!-- loader -->
+            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+                    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+                    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                        stroke="#F96D00" />
+                </svg></div>
+
+
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="/js/popper.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+            <script src="/js/jquery.easing.1.3.js"></script>
+            <script src="/js/jquery.waypoints.min.js"></script>
+            <script src="/js/jquery.stellar.min.js"></script>
+            <script src="/js/owl.carousel.min.js"></script>
+            <script src="/js/jquery.magnific-popup.min.js"></script>
+            <script src="/js/jquery.animateNumber.min.js"></script>
+            <script src="/js/bootstrap-datepicker.js"></script>
+            <script src="/js/jquery.timepicker.min.js"></script>
+            <script src="/js/scrollax.min.js"></script>
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+            <script src="/js/google-map.js"></script>
+            <script src="/js/main.js"></script>
+
+
+    </body>
+
+</html>
